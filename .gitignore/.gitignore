@@ -1,0 +1,10 @@
+data/external/
+data/processed/
+data/raw/
+models/
+submissions/
+outputs/
+tuning/
+__pycache__/
+*.pyc
+.DS_Store
