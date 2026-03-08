@@ -19,12 +19,12 @@ SUB.mkdir(parents=True, exist_ok=True)
 stage2_path = PROC / "test_preds_stage2.csv"
 stage1_path = PROC / "test_preds_stage1.csv"
 
-if stage2_path.exists():
+if stage1_path.exists():
+    preds_df = pd.read_csv(stage1_path)
+    print("Using Stage-1 predictions (better OOF score)")
+else:
     preds_df = pd.read_csv(stage2_path)
     print("Using Stage-2 predictions")
-else:
-    preds_df = pd.read_csv(stage1_path)
-    print("Using Stage-1 predictions")
 
 # ── Load test IDs ─────────────────────────────────────────────────────────────
 test  = pd.read_csv(RAW / "TestSet.csv")

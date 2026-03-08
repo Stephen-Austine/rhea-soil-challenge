@@ -1,0 +1,18 @@
+
+
+import pandas as pd
+import numpy as np
+from pathlib import Path
+
+print('Loading data...')
+train = pd.read_csv('data/processed/train_features.csv')
+print(f'Train shape: {train.shape}')
+print(f'Memory: {train.memory_usage().sum() / 1e9:.2f} GB')
+
+from xgboost import XGBRegressor
+print('Testing XGBoost on small sample...')
+X = train.select_dtypes(include=[np.number]).iloc[:1000, :50].fillna(0)
+y = train['Al'].iloc[:1000].fillna(0)
+m = XGBRegressor(n_estimators=10, verbosity=0)
+m.fit(X, y)
+print('XGBoost works on small sample!')
