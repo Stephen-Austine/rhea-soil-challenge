@@ -1,6 +1,6 @@
 # Rhea Soil Nutrient Prediction Challenge
 
-A complete pipeline for the Rhea soil nutrient prediction competition. The project supports multi-target regression for 13 soil nutrient variables across 6,070 unseen test locations in Africa.
+A reproducible machine learning pipeline for predicting 13 soil nutrient concentrations across Africa using tabular soil chemistry, remote sensing, and environmental covariates.
 
 ![Spatial Coverage](outputs/eda_plots/01_spatial_coverage.png)
 
@@ -165,4 +165,4 @@ If you want to improve the pipeline:
 
 ## License
 
-This project is shared for research and competition workflow purposes. Adjust the license as needed for public release.
+This project is licensed under the MIT License. See `LICENSE` for details.
